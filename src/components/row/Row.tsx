@@ -15,7 +15,9 @@ function Row({ props }: Props) {
     }
   };
 
-  const hanldeEdit = (props: IEmployee) => {};
+  const hanldeEdit = (props: IEmployee) => {
+    actions.setEmployeeForm(props)
+  };
 
   return (
     <tr>
