@@ -18,6 +18,7 @@ type EmployeesContext = {
 const employeesInitialState = {
   data: [],
   employee: {
+    id: 0,
     name: "",
     salary: 0,
     age: 18,
@@ -30,9 +31,7 @@ const employeesInitialState = {
   },
 };
 
-export const EmployeesContext = createContext<EmployeesContext>(
-  employeesInitialState
-);
+export const EmployeesContext = createContext<EmployeesContext>(employeesInitialState);
 
 type Children = {
   children: ReactNode;
@@ -42,7 +41,7 @@ export function EmployeesProvider({ children }: Children) {
   const [employees, setEmployees] = useState<EmployeesContext>({
     data: [],
     employee: {
-      id: 0 || undefined,
+      id: 0,
       name: "",
       salary: 0,
       age: 18,
